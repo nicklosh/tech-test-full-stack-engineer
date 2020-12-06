@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 
 class Lead extends Component {
   constructor(props) {
@@ -10,16 +11,18 @@ class Lead extends Component {
     }
   }
 
-  acceptLead() {
-    this.setState({
-      isAccepted: true
-    })
+  acceptLead = () => {
+    Axios.post('http://localhost:8080/setStatus', {
+      id: this.props.id,
+      status: 'accepted'
+    }).then(() => console.log('SUCCESS!!!'));
   }
 
-  declineLead() {
-    this.setState({
-      isDeclined: true
-    })
+  declineLead = () => {
+    Axios.post('http://localhost:8080/setStatus', {
+      id: this.props.id,
+      status: 'declined'
+    }).then(() => console.log('SUCCESS!!!'));
   }
 
   render() {
