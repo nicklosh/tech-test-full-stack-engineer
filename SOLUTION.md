@@ -6,3 +6,7 @@ The only docker that worked was the UI so I made a fake data file so I could sti
 I created the html and templates and CSS using BEM methodology, I'm still new to reactjs so this took a lot of googling 
 
 I added fontawesome using CDN, I tried with npm first without success
+
+TODO:
+- read and write from the database
+- order leads by date
